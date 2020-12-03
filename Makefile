@@ -14,6 +14,7 @@ EXERCISE ?= 1
 
 $(BUILD_DIR)/rules.ninja:
 	@mkdir -p $(BUILD_DIR) && cd $(BUILD_DIR) && \
+	conan install .. &&\
 	$(CMAKE) \
    	-DCMAKE_CXX_STANDARD=$(CXX_STANDARD) \
 	-DCMAKE_BUILD_TYPE=$(BUILD_TYPE) \
