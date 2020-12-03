@@ -6,6 +6,7 @@ add_executable(${name}
 
 target_link_libraries(${name}
     CONAN_PKG::ctre
+    utils
     pthread
     )
 

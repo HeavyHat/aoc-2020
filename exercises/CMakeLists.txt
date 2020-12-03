@@ -1,6 +1,5 @@
-if(NOT DEFINED AOC_EXERCISE)
-    message(FATAL "Please set the AOC_EXERCISE variable to compile a particule
-    exercise.")
-else()
-    add_subdirectory(${AOC_EXERCISE})
-endif()
+SUBDIRLIST(SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR})
+
+foreach( subdir ${SUBDIRS})
+    add_subdirectory(${subdir})
+endforeach()

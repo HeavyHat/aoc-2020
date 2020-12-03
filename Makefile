@@ -8,7 +8,6 @@ BUILD_TOOL ?= Ninja
 BUILD_TYPE ?= RelWithDebInfo
 CXX_STARDARD ?= 20
 JOBS ?= 8
-EXERCISE ?= 1
 
 .PHONY: install all exec-test test exec-benchmark benchmark init check-format format clang-tidy lint
 
@@ -20,7 +19,6 @@ $(BUILD_DIR)/rules.ninja:
 	-DCMAKE_BUILD_TYPE=$(BUILD_TYPE) \
     -G$(BUILD_TOOL) \
 	-DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-	-DAOC_EXERCISE=$(EXERCISE) \
 	-Wdev \
 	-Wall \
 	..
