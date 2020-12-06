@@ -6,7 +6,7 @@ add_executable(${name}
 
 target_link_libraries(${name} PUBLIC
     CONAN_PKG::fmt
-    utils
+    commonutils
     pthread
     )
 

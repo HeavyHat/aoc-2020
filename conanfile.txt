@@ -3,6 +3,8 @@ tl-expected/20190710
 ctre/3.3.2
 fmt/7.1.2
 range-v3/0.11.0
+cxxopts/2.2.1
+boost/1.74.0
 
 [generators]
 cmake

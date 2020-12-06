@@ -4,13 +4,12 @@ add_executable(${name}
         ${source_files}
     )
 
-target_link_libraries(${name}
-    CONAN_PKG::ctre
+target_link_libraries(${name} PUBLIC
     commonutils
+    CONAN_PKG::fmt
+    CONAN_PKG::range-v3
     pthread
     )
-
-file(COPY "policies.txt" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 set_target_properties(${name} PROPERTIES SUFFIX ".tsk" OUTPUT_NAME
     "excercise-${name}")

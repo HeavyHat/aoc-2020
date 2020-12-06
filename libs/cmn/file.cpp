@@ -1,5 +1,7 @@
+#include <experimental/iterator>
 #include <file.h>
 #include <fmt/format.h>
+#include <sstream>
 #include <string>
 #include <tl/expected.hpp>
 #include <vector>
@@ -28,6 +30,14 @@ std::vector<std::string> File::read_lines()
         lines.emplace_back(std::move(line));
     }
     return lines;
+}
+
+std::string File::read_all()
+{
+    auto lines = read_lines();
+    std::stringstream ss;
+    std::move(lines.begin(), lines.end(), std::experimental::make_ostream_joiner(ss, "\n"));
+    return ss.str();
 }
 
 tl::expected<std::string, std::string> File::read()

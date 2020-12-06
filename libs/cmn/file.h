@@ -18,6 +18,7 @@ class File
     File(const std::string &path);
     virtual ~File();
     std::vector<std::string> read_lines();
+    std::string read_all();
     tl::expected<std::string, std::string> read();
 };
 } // namespace hh::aoc
